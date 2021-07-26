@@ -4,6 +4,7 @@
 import { __, sprintf } from '@wordpress/i18n';
 import { Component } from '@wordpress/element';
 import classnames from 'classnames';
+import { View } from 'react-native';
 
 /**
  * Internal dependencies
@@ -14,6 +15,7 @@ import Mosaic from './mosaic';
 import Square from './square';
 import { isSquareishLayout, photonizedImgProps } from '../utils';
 import { LAYOUT_CIRCLE, MAX_ROUNDED_CORNERS } from '../constants';
+import Wrapper from './wrapper';
 
 export default class Layout extends Component {
 	// This is tricky:
@@ -94,12 +96,14 @@ export default class Layout extends Component {
 			layoutStyle !== LAYOUT_CIRCLE ? Math.min( roundedCorners, MAX_ROUNDED_CORNERS ) : 0;
 
 		return (
-			<div
+			<Wrapper
+				isSave={ isSave }
 				className={ classnames( className, {
 					[ `has-rounded-corners-${ roundedCornersValue }` ]: roundedCornersValue > 0,
 				} ) }
 			>
 				<LayoutRenderer
+					isSave={ isSave }
 					align={ align }
 					columns={ columns }
 					columnWidths={ isSave ? columnWidths : undefined }
@@ -109,7 +113,7 @@ export default class Layout extends Component {
 					onResize={ isSave ? undefined : onResize }
 				/>
 				{ children }
-			</div>
+			</Wrapper>
 		);
 	}
 }

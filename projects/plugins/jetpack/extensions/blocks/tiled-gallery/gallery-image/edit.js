@@ -8,6 +8,7 @@ import { Component, createRef, Fragment } from '@wordpress/element';
 import { Button, Spinner } from '@wordpress/components';
 import { isBlobURL } from '@wordpress/blob';
 import { withSelect } from '@wordpress/data';
+import { View } from 'react-native';
 
 /**
  * Internal dependencies
@@ -102,7 +103,7 @@ class GalleryImageEdit extends Component {
 			// direct image selection and unfocus caption fields.
 			/* eslint-disable jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-noninteractive-tabindex */
 			<Fragment>
-				<img
+				{ /* <img
 					alt={ alt }
 					aria-label={ ariaLabel }
 					data-height={ height }
@@ -117,7 +118,7 @@ class GalleryImageEdit extends Component {
 					srcSet={ isTransient ? undefined : srcSet }
 					tabIndex="0"
 					style={ isTransient ? { backgroundImage: `url(${ origUrl })` } : undefined }
-				/>
+				/> */ }
 				{ isTransient && <Spinner /> }
 			</Fragment>
 			/* eslint-enable jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-noninteractive-tabindex */
@@ -125,7 +126,7 @@ class GalleryImageEdit extends Component {
 
 		// Disable reason: Each block can be selected by clicking on it and we should keep the same saved markup
 		return (
-			<figure
+			<View
 				className={ classnames( 'tiled-gallery__item', {
 					'is-selected': isSelected,
 					'is-transient': isTransient,
@@ -133,7 +134,7 @@ class GalleryImageEdit extends Component {
 				} ) }
 			>
 				{ showMovers && (
-					<div className="tiled-gallery__item__move-menu">
+					<View className="tiled-gallery__item__move-menu">
 						<Button
 							icon={ columns === 1 ? upChevron : leftChevron }
 							onClick={ isFirstItem ? undefined : onMoveBackward }
@@ -150,9 +151,9 @@ class GalleryImageEdit extends Component {
 							aria-disabled={ isLastItem }
 							disabled={ ! isSelected }
 						/>
-					</div>
+					</View>
 				) }
-				<div className="tiled-gallery__item__inline-menu">
+				<View className="tiled-gallery__item__inline-menu">
 					<Button
 						icon={ close }
 						onClick={ onRemove }
@@ -160,11 +161,11 @@ class GalleryImageEdit extends Component {
 						label={ __( 'Remove image', 'jetpack' ) }
 						disabled={ ! isSelected }
 					/>
-				</div>
+				</View>
 				{ /* Keep the <a> HTML structure, but ensure there is no navigation from edit */
 				/* eslint-disable-next-line jsx-a11y/anchor-is-valid */ }
 				{ href ? <a>{ img }</a> : img }
-			</figure>
+			</View>
 		);
 	}
 }

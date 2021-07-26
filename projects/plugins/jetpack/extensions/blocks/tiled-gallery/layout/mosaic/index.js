@@ -84,7 +84,15 @@ export default class Mosaic extends Component {
 	}
 
 	render() {
-		const { align, columns, images, layoutStyle, renderedImages, columnWidths } = this.props;
+		const {
+			align,
+			columns,
+			images,
+			layoutStyle,
+			renderedImages,
+			columnWidths,
+			isSave,
+		} = this.props;
 
 		const ratios = imagesToRatios( images );
 		const rows =
@@ -94,14 +102,15 @@ export default class Mosaic extends Component {
 
 		let cursor = 0;
 		return (
-			<Gallery galleryRef={ this.gallery }>
+			<Gallery galleryRef={ this.gallery } isSave={ isSave }>
 				{ rows.map( ( row, rowIndex ) => (
-					<Row key={ rowIndex }>
+					<Row key={ rowIndex } isSave={ isSave }>
 						{ row.map( ( colSize, colIndex ) => {
 							const columnImages = renderedImages.slice( cursor, cursor + colSize );
 							cursor += colSize;
 							return (
 								<Column
+									isSave={ isSave }
 									key={ colIndex }
 									width={ columnWidths ? columnWidths[ rowIndex ][ colIndex ] : undefined }
 								>

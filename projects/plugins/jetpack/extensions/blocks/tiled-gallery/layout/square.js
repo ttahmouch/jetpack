@@ -11,20 +11,23 @@ import Column from './column';
 import Gallery from './gallery';
 import { MAX_COLUMNS } from '../constants';
 
-export default function Square( { columns, renderedImages } ) {
+export default function Square( { columns, renderedImages, isSave } ) {
 	const columnCount = Math.min( MAX_COLUMNS, columns );
 
 	const remainder = renderedImages.length % columnCount;
 
 	return (
 		<Gallery>
+			isSave={ isSave }
 			{ [
 				...( remainder ? [ take( renderedImages, remainder ) ] : [] ),
 				...chunk( drop( renderedImages, remainder ), columnCount ),
 			].map( ( imagesInRow, rowIndex ) => (
-				<Row key={ rowIndex } className={ `columns-${ imagesInRow.length }` }>
+				<Row key={ rowIndex } className={ `columns-${ imagesInRow.length }` } isSave={ isSave }>
 					{ imagesInRow.map( ( image, colIndex ) => (
-						<Column key={ colIndex }>{ image }</Column>
+						<Column key={ colIndex } isSave={ isSave }>
+							{ image }
+						</Column>
 					) ) }
 				</Row>
 			) ) }

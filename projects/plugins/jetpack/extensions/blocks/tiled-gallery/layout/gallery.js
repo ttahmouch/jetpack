@@ -1,7 +1,14 @@
+/**
+ * External dependencies
+ */
+import { View } from 'react-native';
+
+import Wrapper from './wrapper';
+
 export default function Gallery( { children, galleryRef } ) {
 	return (
-		<div className="tiled-gallery__gallery" ref={ galleryRef }>
+		<Wrapper className="tiled-gallery__gallery" ref={ galleryRef }>
 			{ children }
-		</div>
+		</Wrapper>
 	);
 }

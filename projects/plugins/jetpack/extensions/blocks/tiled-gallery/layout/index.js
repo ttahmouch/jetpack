@@ -4,7 +4,6 @@
 import { __, sprintf } from '@wordpress/i18n';
 import { Component } from '@wordpress/element';
 import classnames from 'classnames';
-import { View } from 'react-native';
 
 /**
  * Internal dependencies

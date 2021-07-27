@@ -1,8 +1,6 @@
 /**
  * External dependencies
  */
-import { View } from 'react-native';
-
 import Wrapper from './wrapper';
 
 export default function Gallery( { children, galleryRef } ) {

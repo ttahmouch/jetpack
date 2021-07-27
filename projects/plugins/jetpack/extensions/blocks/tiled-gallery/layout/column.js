@@ -1,7 +1,6 @@
 /**
  * External dependencies
  */
-import { View } from 'react-native';
 import Wrapper from './wrapper';
 
 export default function Column( { children, width, isSave } ) {

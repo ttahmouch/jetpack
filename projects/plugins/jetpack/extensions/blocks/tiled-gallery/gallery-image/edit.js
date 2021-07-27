@@ -8,7 +8,7 @@ import { Component, createRef, Fragment } from '@wordpress/element';
 import { Button, Spinner } from '@wordpress/components';
 import { isBlobURL } from '@wordpress/blob';
 import { withSelect } from '@wordpress/data';
-import { View } from 'react-native';
+import Wrapper from '../layout/wrapper';
 
 /**
  * Internal dependencies
@@ -126,7 +126,7 @@ class GalleryImageEdit extends Component {
 
 		// Disable reason: Each block can be selected by clicking on it and we should keep the same saved markup
 		return (
-			<View
+			<Wrapper
 				className={ classnames( 'tiled-gallery__item', {
 					'is-selected': isSelected,
 					'is-transient': isTransient,
@@ -134,7 +134,7 @@ class GalleryImageEdit extends Component {
 				} ) }
 			>
 				{ showMovers && (
-					<View className="tiled-gallery__item__move-menu">
+					<Wrapper className="tiled-gallery__item__move-menu">
 						<Button
 							icon={ columns === 1 ? upChevron : leftChevron }
 							onClick={ isFirstItem ? undefined : onMoveBackward }
@@ -151,9 +151,9 @@ class GalleryImageEdit extends Component {
 							aria-disabled={ isLastItem }
 							disabled={ ! isSelected }
 						/>
-					</View>
+					</Wrapper>
 				) }
-				<View className="tiled-gallery__item__inline-menu">
+				<Wrapper className="tiled-gallery__item__inline-menu">
 					<Button
 						icon={ close }
 						onClick={ onRemove }
@@ -161,11 +161,11 @@ class GalleryImageEdit extends Component {
 						label={ __( 'Remove image', 'jetpack' ) }
 						disabled={ ! isSelected }
 					/>
-				</View>
+				</Wrapper>
 				{ /* Keep the <a> HTML structure, but ensure there is no navigation from edit */
 				/* eslint-disable-next-line jsx-a11y/anchor-is-valid */ }
 				{ href ? <a>{ img }</a> : img }
-			</View>
+			</Wrapper>
 		);
 	}
 }

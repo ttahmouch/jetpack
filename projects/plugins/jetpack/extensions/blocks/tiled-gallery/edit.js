@@ -22,7 +22,7 @@ import {
 	ToolbarItem,
 	withNotices,
 } from '@wordpress/components';
-import { View } from 'react-native';
+import Wrapper from './layout/wrapper';
 
 /**
  * Internal dependencies
@@ -208,7 +208,6 @@ class TiledGalleryEdit extends Component {
 			noticeOperations,
 			noticeUI,
 			setAttributes,
-			onFocus,
 		} = this.props;
 		const {
 			align,
@@ -259,7 +258,6 @@ class TiledGalleryEdit extends Component {
 					{ controls }
 					<MediaPlaceholder
 						icon={ <BlockIcon icon={ icon } /> }
-						onFocus={ onFocus }
 						className={ className }
 						labels={ {
 							title: __( 'Tiled Gallery', 'jetpack' ),
@@ -331,7 +329,7 @@ class TiledGalleryEdit extends Component {
 				>
 					{ dropZone }
 					{ isSelected && (
-						<View className="tiled-gallery__add-item">
+						<Wrapper className="tiled-gallery__add-item">
 							<FormFileUpload
 								multiple
 								isLarge
@@ -342,7 +340,7 @@ class TiledGalleryEdit extends Component {
 							>
 								{ __( 'Upload an image', 'jetpack' ) }
 							</FormFileUpload>
-						</View>
+						</Wrapper>
 					) }
 				</Layout>
 			</Fragment>

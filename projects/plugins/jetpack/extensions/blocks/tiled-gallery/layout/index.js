@@ -10,9 +10,8 @@ import classnames from 'classnames';
  */
 import GalleryImageEdit from '../gallery-image/edit';
 import GalleryImageSave from '../gallery-image/save';
-import Mosaic from './mosaic';
 import Square from './square';
-import { isSquareishLayout, photonizedImgProps } from '../utils';
+// import { isSquareishLayout, photonizedImgProps } from '../utils';
 import { LAYOUT_CIRCLE, MAX_ROUNDED_CORNERS } from '../constants';
 import Wrapper from './wrapper';
 
@@ -29,7 +28,6 @@ export default class Layout extends Component {
 			images,
 			isSave,
 			linkTo,
-			layoutStyle,
 			onMoveBackward,
 			onMoveForward,
 			onRemoveImage,
@@ -46,7 +44,8 @@ export default class Layout extends Component {
 		);
 		const Image = isSave ? GalleryImageSave : GalleryImageEdit;
 
-		const { src, srcSet } = photonizedImgProps( img, { layoutStyle } );
+		const src = img.url;
+		const srcSet = undefined;
 
 		return (
 			<Image
@@ -89,7 +88,7 @@ export default class Layout extends Component {
 			isSave,
 			columnWidths,
 		} = this.props;
-		const LayoutRenderer = isSquareishLayout( layoutStyle ) ? Square : Mosaic;
+		const LayoutRenderer = Square;
 		const renderedImages = this.props.images.map( this.renderImage, this );
 		const roundedCornersValue =
 			layoutStyle !== LAYOUT_CIRCLE ? Math.min( roundedCorners, MAX_ROUNDED_CORNERS ) : 0;

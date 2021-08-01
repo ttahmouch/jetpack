@@ -429,7 +429,7 @@ importers:
       copy-webpack-plugin: 5.1.2
       core-js: 3.11.1
       create-react-class: 15.7.0
-      css-loader: 5.1.1
+      css-loader: 5.2.7
       debug: 4.3.1
       email-validator: 2.0.4
       enzyme: 3.11.0
@@ -628,7 +628,7 @@ importers:
       chalk: 4.1.1
       commander: 7.2.0
       concurrently: 6.0.2
-      css-loader: 5.1.1_webpack@4.46.0
+      css-loader: 5.2.7_webpack@4.46.0
       enzyme: 3.11.0
       eslint: 7.31.0
       fs-extra: 10.0.0
@@ -7148,7 +7148,7 @@ packages:
       webpack: ^4.8.3 || ^5.0.0
     dependencies:
       json2php: 0.0.4
-      webpack: 4.46.0_webpack-cli@4.5.0
+      webpack: 4.46.0
       webpack-sources: 2.2.0
     dev: true
 
@@ -10253,14 +10253,12 @@ packages:
       webpack: 5.31.0
     dev: true
 
-  /css-loader/5.1.1_webpack@4.46.0:
-    resolution: {integrity: sha512-5FfhpjwtuRgxqmusDidowqmLlcb+1HgnEDMsi2JhiUrZUcoc+cqw+mUtMIF/+OfeMYaaFCLYp1TaIt9H6I/fKA==}
+  /css-loader/5.2.7_webpack@4.46.0:
+    resolution: {integrity: sha512-Q7mOvpBNBG7YrVGMxRxcBJZFL75o+cH2abNASdibkj/fffYD8qWbInZrD0S9ccI6vZclF3DsHE7njGlLtaHbhg==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
       webpack: ^4.27.0 || ^5.0.0
     dependencies:
-      camelcase: 6.2.0
-      cssesc: 3.0.0
       icss-utils: 5.1.0_postcss@8.2.15
       loader-utils: 2.0.0
       postcss: 8.2.15
@@ -13861,7 +13859,7 @@ packages:
   /isomorphic-fetch/2.2.1:
     resolution: {integrity: sha1-YRrhrPFPXoH3KVB0coGf6XM1WKk=}
     dependencies:
-      node-fetch: 2.6.1
+      node-fetch: 1.7.3
       whatwg-fetch: 3.6.2
     dev: false
 
@@ -16236,6 +16234,13 @@ packages:
 
   /node-contains/1.0.0:
     resolution: {integrity: sha1-0sJzUkU22jtWGvBTnjM0T3yQLLg=}
+    dev: false
+
+  /node-fetch/1.7.3:
+    resolution: {integrity: sha512-NhZ4CsKx7cYm2vSrBAr2PvFOe6sWDf0UYLRqA6svUYg7+/TSfVAu49jYC4BvQ4Sms9SZgdqGBgroqfDhJdTyKQ==}
+    dependencies:
+      encoding: 0.1.13
+      is-stream: 1.1.0
     dev: false
 
   /node-fetch/2.6.1:
@@ -19396,7 +19401,6 @@ packages:
     resolution: {integrity: sha512-GaNA54380uFefWghODBWEGisLZFj00nS5ACs6yHa9nLqlLpVLO8ChDGeKRjZnV4Nh4n0Qi7nhYZD/9fCPzEqkw==}
     dependencies:
       randombytes: 2.1.0
-    dev: false
 
   /serialize-javascript/5.0.1:
     resolution: {integrity: sha512-SaaNal9imEO737H2c05Og0/8LUXG7EnsZyMa8MzkmuHoELfT6txuj0cMqRj6zfPKnmQ1yasR4PCJc8x+M4JSPA==}
@@ -20346,7 +20350,7 @@ packages:
       find-cache-dir: 2.1.0
       is-wsl: 1.1.0
       schema-utils: 1.0.0
-      serialize-javascript: 5.0.1
+      serialize-javascript: 4.0.0
       source-map: 0.6.1
       terser: 4.8.0
       webpack: 4.45.0
@@ -20364,7 +20368,7 @@ packages:
       find-cache-dir: 2.1.0
       is-wsl: 1.1.0
       schema-utils: 1.0.0
-      serialize-javascript: 5.0.1
+      serialize-javascript: 4.0.0
       source-map: 0.6.1
       terser: 4.8.0
       webpack: 4.46.0_webpack-cli@4.5.0
@@ -21829,6 +21833,12 @@ packages:
     resolution: {integrity: sha512-WOkpgNhPTlE73h4VFAFsOnomJVaovO8VqLDzy5saChRBFQFBoMYirowyW+Q9HB4HFF4Z7VZTiG3iSzJJA29yRA==}
     engines: {node: '>=10'}
 
+  /yargs-parser/5.0.1:
+    resolution: {integrity: sha512-wpav5XYiddjXxirPoCTUPbqM0PXvJ9hiBMvuJgInvo4/lAOTZzUprArw17q2O1P2+GHhbBr18/iQwjL5Z9BqfA==}
+    dependencies:
+      camelcase: 3.0.0
+      object.assign: 4.1.2
+
   /yargs-unparser/2.0.0:
     resolution: {integrity: sha512-7pRTIA9Qc1caZ0bZ6RYRGbHJthJWuakf+WmHK0rVeLkNrrGhfoabBNdue6kdINI6r4if7ocq9aD/n7xwKOdzOA==}
     engines: {node: '>=10'}
@@ -21923,7 +21933,7 @@ packages:
       string-width: 1.0.2
       which-module: 1.0.0
       y18n: 3.2.2
-      yargs-parser: 20.2.4
+      yargs-parser: 5.0.1
 
   /yauzl/2.10.0:
     resolution: {integrity: sha1-x+sXyT4RLLEIb6bY5R+wZnt5pfk=}

@@ -110,9 +110,9 @@ export default class Mosaic extends Component {
 							cursor += colSize;
 							return (
 								<Column
-									isSave={ isSave }
 									key={ colIndex }
 									width={ columnWidths ? columnWidths[ rowIndex ][ colIndex ] : undefined }
+									isSave={ isSave }
 								>
 									{ columnImages }
 								</Column>

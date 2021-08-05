@@ -17,8 +17,7 @@ export default function Square( { columns, renderedImages, isSave } ) {
 	const remainder = renderedImages.length % columnCount;
 
 	return (
-		<Gallery>
-			isSave={ isSave }
+		<Gallery isSave={ isSave }>
 			{ [
 				...( remainder ? [ take( renderedImages, remainder ) ] : [] ),
 				...chunk( drop( renderedImages, remainder ), columnCount ),

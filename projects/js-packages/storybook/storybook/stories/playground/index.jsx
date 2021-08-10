@@ -1,4 +1,4 @@
-/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable react/react-in-jsx-scope,jsdoc/no-undefined-types */
 /**
  * WordPress dependencies
  */

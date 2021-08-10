@@ -23,6 +23,8 @@ import './style.scss';
 
 /**
  * Render our playground component
+ *
+ * @returns {React.Component} - The App
  */
 function App() {
 	const [ blocks, updateBlocks ] = useState( [] );

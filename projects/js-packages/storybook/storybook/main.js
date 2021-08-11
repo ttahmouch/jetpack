@@ -1,4 +1,8 @@
 /**
+ * This file is inspired by https://github.com/WordPress/gutenberg/blob/trunk/storybook/main.js
+ */
+
+/**
  * External dependencies
  */
 const path = require( 'path' );
@@ -6,12 +10,8 @@ const path = require( 'path' );
 const modulesDir = path.join( __dirname, '../node_modules' );
 
 const stories = [
-	'./stories/**/*.@(js|jsx|mdx)',
+	process.env.NODE_ENV !== 'test' && './stories/**/*.@(js|jsx|mdx)',
 	path.join( modulesDir, '@automattic/jetpack-components/components/**/stories/*.@(js|jsx|mdx)' ),
-	// process.env.NODE_ENV !== 'test' && './stories/**/*.@(js|mdx)',
-	// '../packages/block-editor/src/**/stories/*.js',
-	// '../packages/components/src/**/stories/*.js',
-	// '../packages/icons/src/**/stories/*.js',
 ].filter( Boolean );
 
 const customEnvVariables = {};

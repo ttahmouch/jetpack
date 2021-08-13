@@ -3,7 +3,7 @@ name: Storybook GitHub Pages
 on:
   push:
     branches:
-      - add/storybook
+      - master
 
 jobs:
   deploy:
@@ -17,7 +17,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: add/storybook
+          ref: master
 
       - name: Read tool versions
         id: versions
